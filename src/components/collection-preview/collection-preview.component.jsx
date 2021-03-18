@@ -1,13 +1,12 @@
 import React from 'react';
 
 import CollectionItem from '../collection-item/collection-item.component';
-
-import './collection-preview.styles.scss';
+import { CollectionPreviewContainer, CollectionPreviewItem } from './collection-preview.styles';
 
 const CollectionPreview = ({ title, items }) => (
-    <div className="collection-preview">
+    <CollectionPreviewContainer>
         <h1 className="title">{title.toUpperCase()}</h1>
-        <div className="preview">
+        <CollectionPreviewItem>
             {
                 items
                     .slice(0, 4)
@@ -15,8 +14,8 @@ const CollectionPreview = ({ title, items }) => (
                         <CollectionItem key={item.id} item={item} />
                     ))
             }
-        </div>
-    </div>
+        </CollectionPreviewItem>
+    </CollectionPreviewContainer>
 );
 
 export default CollectionPreview;
